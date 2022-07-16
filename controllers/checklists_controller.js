@@ -26,12 +26,12 @@ checklists.get('/:id', async (req, res) => {
     try {
         const foundChecklist = await Checklist.findOne({
             where: { checklist_id:req.params.id },
-            include: [
-                {
-                    model: Task,
-                    as: "tasks"
-                }
-            ]
+            // include: [
+            //     {
+            //         model: Task,
+            //         as: "tasks"
+            //     }
+            // ]
         })
         res.status(200).json(foundChecklist)
     }
